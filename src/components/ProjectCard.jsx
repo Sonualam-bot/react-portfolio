@@ -1,5 +1,5 @@
 function ProjectCard({ item }) {
-  const { img, title } = item;
+  const { img, title, liveLink, github } = item;
   return (
     <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl group hover:bg-gradient-to-r from-gray-200 to-[#001b5e]">
       <img src={img} alt="/img" className="rounded-xl group-hover:opacity-10" />
@@ -9,13 +9,23 @@ function ProjectCard({ item }) {
           {title}
         </h3>
         <p className="pb-4 pt-2 text-white text-center">React Js</p>
-        <div className="flex  gap-2">
-          <a className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg">
-            Live Link
+        <div className="flex  gap-2 pl-5">
+          <a
+            href={liveLink}
+            className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live
           </a>
-          {/* <a className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg">
-            Live Link
-          </a> */}
+          <a
+            href={github}
+            className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
         </div>
       </div>
     </div>
