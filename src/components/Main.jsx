@@ -1,6 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import GraphemeSplitter from "grapheme-splitter";
-import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const splitter = new GraphemeSplitter();
 
@@ -62,9 +63,29 @@ function Main() {
             />
           </h2>
           <div className="flex justify-between pt-6 max-w-[200px] w-full">
-            <FaTwitter className="cursor-pointer" size={20} />
-            <FaInstagram className="cursor-pointer" size={20} />
-            <FaLinkedin className="cursor-pointer" size={20} />
+            <NavLink
+              to="https://twitter.com/muhammadsonu15"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter className="cursor-pointer" size={20} />
+            </NavLink>
+
+            <NavLink
+              to="https://github.com/Sonualam-bot"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="cursor-pointer" size={20} />
+            </NavLink>
+
+            <NavLink
+              to="https://www.linkedin.com/in/mdsonualam"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="cursor-pointer" size={20} />
+            </NavLink>
           </div>
         </div>
       </div>
