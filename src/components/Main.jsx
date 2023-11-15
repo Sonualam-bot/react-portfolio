@@ -13,7 +13,7 @@ function Main() {
         alt="/"
       />
       <div className="w-full h-screen absolute top-0 left-0 bg-white/50">
-        <div className="max-w-[700px] a-auto h-full w-full flex flex-col justify-center lg:items-start items-center ">
+        <div className=" a-auto h-full w-full flex flex-col justify-center lg:items-center items-center ">
           <h2 className="sm:text-5xl text-6xl font-bold text-gray-800">
             <TypeAnimation
               splitter={(str) => splitter.splitGraphemes(str)}
