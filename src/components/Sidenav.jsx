@@ -6,8 +6,8 @@ import {
   AiOutlineMenu,
   AiOutlineProject,
 } from "react-icons/ai";
-// import { GrProjects } from "react-icons/gr";
 import { BsPerson } from "react-icons/bs";
+import { IoSettingsOutline } from "react-icons/io5";
 
 function Sidenav() {
   const [nav, setNav] = useState(false);
@@ -32,30 +32,31 @@ function Sidenav() {
             <AiOutlineHome size={20} />
             <span className="pl-4">Home</span>
           </a>
-          {/* <a
-            onClick={handleNav}
-            href="#work"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <GrProjects size={20} />
-            <span className="pl-4">Work</span>
-          </a> */}
           <a
             onClick={handleNav}
-            href="#project"
+            href="#about"
+            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+          >
+            <BsPerson size={20} />
+            <span className="pl-4">About</span>
+          </a>
+          <a
+            onClick={handleNav}
+            href="#skills"
+            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+          >
+            <IoSettingsOutline size={20} />
+            <span className="pl-4">Resume</span>
+          </a>
+          <a
+            onClick={handleNav}
+            href="#projects"
             className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
           >
             <AiOutlineProject size={20} />
             <span className="pl-4">Projects</span>
           </a>
-          <a
-            onClick={handleNav}
-            href="#resume"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <BsPerson size={20} />
-            <span className="pl-4">Resume</span>
-          </a>
+
           <a
             onClick={handleNav}
             href="#contact"
@@ -76,24 +77,25 @@ function Sidenav() {
           >
             <AiOutlineHome />
           </a>
-          {/* <a
-            href="#work"
+          <a
+            href="#about"
             className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
           >
-            <GrProjects />
-          </a> */}
+            <BsPerson />
+          </a>
+          <a
+            href="#skills"
+            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+          >
+            <IoSettingsOutline />
+          </a>
           <a
             href="#projects"
             className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
           >
             <AiOutlineProject />
           </a>
-          <a
-            href="#resume"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <BsPerson />
-          </a>
+
           <a
             href="#contact"
             className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"

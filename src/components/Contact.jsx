@@ -1,9 +1,10 @@
 function Contact() {
   return (
     <div id="contact" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16 ">
-      <h1 className="py-4 text-4xl font-bold text-center text-[#001b5e]">
+      <h1 className="pt-4 text-4xl font-bold text-center text-[#001b5e]">
         Contact
       </h1>
+      <div className="w-28 mb-4 m-auto h-1 rounded-lg bg-[#facc15]"></div>
       <form
         action="https://getform.io/f/c2cca6fe-6b25-423a-8360-3f2400dc1ff5"
         method="POST"
