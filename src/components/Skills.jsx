@@ -23,9 +23,9 @@ function Skills() {
     <div id="skills" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16  ">
       <h1 className="text-4xl font-bold text-center text-[#001b5e]">Skills</h1>
       <div className="w-20 m-auto h-1 rounded-lg bg-[#facc15]"></div>
-      <p className=" py-8 text-center text-lg  ">
+      {/* <p className=" py-8 text-center text-lg  ">
         This are the technologies that I work with.
-      </p>
+      </p> */}
 
       <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 ">
         {skillsSet?.map((skills, index) => {
