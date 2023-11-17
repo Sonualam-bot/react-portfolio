@@ -15,7 +15,7 @@ function Main() {
       />
       <div className="w-full h-screen absolute top-0 left-0 bg-white/50">
         <div className=" a-auto h-full w-full flex flex-col justify-center lg:items-center items-center ">
-          <h2 className="sm:text-5xl text-6xl font-bold text-gray-800">
+          <h2 className="sm:text-5xl text-6xl font-bold text-gray-800 mb-4  ">
             <TypeAnimation
               splitter={(str) => splitter.splitGraphemes(str)}
               sequence={[
