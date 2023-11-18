@@ -33,7 +33,7 @@ function ProjectCard({ item, frontend }) {
         <div className="flex items-center justify-center gap-6 ">
           <a
             href={liveLink}
-            className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg"
+            className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg bg-gradient-to-r from-indigo-400 to-indigo-800 hover:from-purple-500 hover:to-violet-700 hover:text-white "
             target="_blank"
             rel="noreferrer"
           >
@@ -42,7 +42,7 @@ function ProjectCard({ item, frontend }) {
           {frontend && (
             <a
               href={github}
-              className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg"
+              className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg bg-gradient-to-r from-indigo-400 to-indigo-800 hover:from-purple-500 hover:to-violet-700 hover:text-white"
               target="_blank"
               rel="noreferrer"
             >

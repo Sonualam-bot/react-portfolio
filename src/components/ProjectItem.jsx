@@ -36,7 +36,7 @@ export const ProjectItem = [
   {
     id: 4,
     img: "https://images.pexels.com/photos/1121482/pexels-photo-1121482.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Zomato Api",
+    title: "Zomato API",
     liveLink: "https://documenter.getpostman.com/view/17452120/2s9YC4WZBN",
     github: "",
     tag: "api",
@@ -46,7 +46,7 @@ export const ProjectItem = [
   {
     id: 5,
     img: "https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "User Auth",
+    title: "User Auth API",
     liveLink: "https://documenter.getpostman.com/view/17452120/2s9YJZ4Qcx",
     github: "",
     tag: "api",
@@ -56,7 +56,7 @@ export const ProjectItem = [
   {
     id: 6,
     img: "https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Trip Advisor",
+    title: "Trip Advisor API",
     liveLink: "https://documenter.getpostman.com/view/17452120/2s9YJZ454T",
     github: "",
     tag: "api",
@@ -76,7 +76,7 @@ export const ProjectItem = [
   {
     id: 8,
     img: "https://images.pexels.com/photos/1172019/pexels-photo-1172019.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Fitness Tracker",
+    title: "Fitness Tracker API",
     liveLink: "https://documenter.getpostman.com/view/17452120/2s9YXo1ef7",
     github: "",
     tag: "api",

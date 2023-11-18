@@ -1,7 +1,7 @@
 function WorkCard({ item }) {
   const { year, title, duration, details } = item;
   return (
-    <ol className="flex flex-col md:flex-row relative border-l-2 text-lg border-[#001b5e] ">
+    <ol className="flex flex-col md:flex-row relative border-l-2 text-lg border-[#001b5e] shadow-md rounded-r-md p-2 ">
       <li className="mb-10 ml-4">
         <div
           className="absolute w-3 h-3
