@@ -2,15 +2,19 @@ import RenonImg from "../assets/Renon.jpeg";
 
 function About() {
   return (
-    <div id="about" className="max-w-screen-xl mx-auto md:pl-8 p-4 py-16">
+    <div id="about" className="max-full mx-auto md:pl-8 p-4 py-16  ">
       <h1 className="text-4xl font-bold text-center text-[#001b5e] mb-1">
         About
       </h1>
       <div className="w-20 m-auto h-1 rounded-lg bg-[#facc15] mb-8"></div>
 
       <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2">
-        <div className="rounded-xl md:w-[280px] mx-auto md:mx-0 mb-4 md:mb-0 overflow-hidden shadow-lg ring-stone-100">
-          <img src={RenonImg} alt="/dev" className="w-full h-auto rounded-xl" />
+        <div className="rounded-xl md:w-[280px] mx-auto md:mx-0 mb-4 md:mb-0 overflow-hidden shadow-lg ring-stone-100 ">
+          <img
+            src={RenonImg}
+            alt="/dev"
+            className="w-full h-auto rounded-xl  "
+          />
         </div>
         <div>
           <p className="text-lg md:text-lg text-left mb-4 ">
@@ -33,3 +37,8 @@ function About() {
 }
 
 export default About;
+
+// bg-gradient-to-r from-gray-200 to-[#001b5e]
+
+// background: rgb(255,255,255);
+// background: linear-gradient(344deg, rgba(255,255,255,1) 45%, rgba(0,27,94,1) 45%);

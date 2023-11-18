@@ -1,11 +1,11 @@
 import "./App.css";
 import About from "./components/About";
-import Apis from "./components/Apis";
 import Contact from "./components/Contact";
 import Main from "./components/Main";
 import Projects from "./components/Projects";
 import Sidenav from "./components/Sidenav";
 import Skills from "./components/Skills";
+import Work from "./components/Work";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <Apis />
+        <Work />
         <Contact />
       </div>
     </>

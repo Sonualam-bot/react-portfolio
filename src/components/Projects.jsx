@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { FrontEndProjects } from "./ProjectItem";
+import { ProjectItem } from "./ProjectItem";
 
 function Projects() {
   return (
@@ -17,7 +17,7 @@ function Projects() {
         efficient, and visually compelling user interfaces.
       </p>
       <div className="grid sm:grid-cols-2 gap-12">
-        {FrontEndProjects?.map((item) => {
+        {ProjectItem?.map((item) => {
           return <ProjectCard key={item.id} item={item} frontend />;
         })}
       </div>
