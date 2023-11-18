@@ -3,7 +3,7 @@ function ProjectCard({ item, frontend }) {
   return (
     <div
       key={id}
-      className="group relative max-w-2xl rounded-lg border border-gray-100 p-1 shadow-2xl shadow-gray-[#001b5e]/10 sm:p-5"
+      className="group relative max-w-2xl rounded-lg border border-gray-100 p-3 shadow-2xl shadow-gray-[#001b5e]/10 md:p-4"
     >
       <div className="relative w-full overflow-hidden rounded-lg shadow-lg ">
         <img
