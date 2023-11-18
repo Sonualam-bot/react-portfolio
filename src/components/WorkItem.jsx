@@ -13,7 +13,7 @@ export const workDetails = [
     details: "Completed Bachelors Degree in Computer Science.",
   },
   {
-    year: "2016 - 2017",
+    year: "2015 - 2017",
     title: "Higher Secondary Education",
     duration: "2 years",
     details: "Completed my Higer Secondary Education.",

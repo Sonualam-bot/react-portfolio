@@ -1,11 +1,11 @@
 function WorkCard({ item }) {
   const { year, title, duration, details } = item;
   return (
-    <ol className="flex flex-col md:flex-row relative border-l border-stone-200">
+    <ol className="flex flex-col md:flex-row relative border-l-2 text-lg border-[#001b5e] ">
       <li className="mb-10 ml-4">
         <div
           className="absolute w-3 h-3
-         bg-stone-200 rounded-full
+         bg-[#001b5e] rounded-full
           mt-1.5 -left-1.5 border-white"
         />
         <p className="flex flex-wrap gap-4 flex-row items-center justify-start text-xs md:text-sm">
@@ -18,9 +18,7 @@ function WorkCard({ item }) {
           </span>
         </p>
         <p>
-          <span className="my-2 text-base font-normal text-stone-500">
-            {details}
-          </span>
+          <span className="my-2  font-normal  text-stone-500">{details}</span>
         </p>
       </li>
     </ol>
