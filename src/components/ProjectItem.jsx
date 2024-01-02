@@ -1,8 +1,30 @@
 import EcomImg from "../assets/ecom.jpg";
 import SocialImg from "../assets/social.png";
 import CssLibImg from "../assets/csslib.png";
+import fitnessTracker from "../assets/fitnessTracker.png";
+import stackoverFlow from "../assets/stackoverflow.png";
 
 export const ProjectItem = [
+  {
+    id: 9,
+    img: fitnessTracker,
+    title: "Fitness Tracker",
+    liveLink: "https://fitness-tracker-orpin.vercel.app/user",
+    github: "https://github.com/Sonualam-bot/fitness-tracker",
+    tag: "frontend",
+    techStack:
+      "Fitness Tracker is MERN application build to track calories consumed or burned.",
+  },
+  {
+    id: 10,
+    img: stackoverFlow,
+    title: "StackOver Flow",
+    liveLink: "https://stackoverflow-clone-mralam.vercel.app/",
+    github: "https://github.com/Sonualam-bot/stackoverflow-clone",
+    tag: "frontend",
+    techStack:
+      "StackOver flow clone build using MERN stack for asking doubts and queries related to programming.",
+  },
   {
     id: 1,
     img: EcomImg,
@@ -83,14 +105,6 @@ export const ProjectItem = [
     techStack:
       "The Fitness Tracker APIs, built with MongoDB and Express, empower developers to create robust applications, seamlessly tracking and managing fitness data",
   },
-  // {
-  //   id: 9,
-  //   img: "https://images.pexels.com/photos/1172019/pexels-photo-1172019.jpeg?auto=compress&cs=tinysrgb&w=600",
-  //   title: "Fitness Tracker",
-  //   liveLink: "https://fitness-tracker-orpin.vercel.app/user",
-  //   github: "https://github.com/Sonualam-bot/fitness-tracker",
-  //   tag: "frontend",
-  // },
 ];
 
 export const FrontEndProjects = [...ProjectItem]?.filter(
