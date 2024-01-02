@@ -18,7 +18,7 @@ export const ProjectItem = [
   {
     id: 10,
     img: stackoverFlow,
-    title: "StackOver Flow",
+    title: "StackOver Flow Clone ",
     liveLink: "https://stackoverflow-clone-mralam.vercel.app/",
     github: "https://github.com/Sonualam-bot/stackoverflow-clone",
     tag: "frontend",
