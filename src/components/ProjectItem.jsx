@@ -38,8 +38,8 @@ export const ProjectItem = [
   {
     id: 2,
     img: SocialImg,
-    title: "Socio Wave",
-    liveLink: "https://socio-buzz.vercel.app/",
+    title: "Twitter Clone",
+    liveLink: "https://twitter-x-clone-mralam.onrender.com/",
     github: "https://github.com/Sonualam-bot/socioBuzz",
     tag: "frontend",
     techStack:

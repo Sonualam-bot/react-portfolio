@@ -31,8 +31,8 @@ function About() {
             the lives of those around me.
           </p>
           <a
-            href="https://drive.google.com/file/d/1CubCYlXv_fIH-AN5n6MtTWdYPbZ_3fKh/view?usp=sharing"
-            className=" w-[170px] mx-auto p-2 cursor-pointer hover:scale-110 duration-500 text-white px-2 font-bold rounded-full 
+            href="https://drive.google.com/file/d/1HbKgRPajSjenQJzwzyfoSRFPPdMkgZoU/view?usp=sharing"
+            className=" text-center w-[170px] mx-auto p-2 cursor-pointer hover:scale-110 duration-500 text-white px-2 font-bold rounded-full 
           bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-blue-500"
             target="_blank"
             rel="noreferrer"
