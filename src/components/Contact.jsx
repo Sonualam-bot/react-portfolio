@@ -29,11 +29,11 @@ function Contact() {
   };
 
   return (
-    <div id="contact" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16 ">
-      <h1 className="pt-4 text-4xl font-bold text-center text-[#001b5e]">
+    <div id="contact" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
+      <h1 className="pt-4 text-3xl sm:text-4xl font-display font-bold text-center text-stone-900">
         Contact
       </h1>
-      <div className="w-28 mb-4 m-auto h-1 rounded-lg bg-[#facc15]"></div>
+      <div className="w-28 mb-8 m-auto h-1 rounded-lg bg-teal-600"></div>
       <form
         action="https://getform.io/f/c2cca6fe-6b25-423a-8360-3f2400dc1ff5"
         method="POST"
@@ -42,9 +42,9 @@ function Contact() {
       >
         <div className="grid md:grid-cols-2 gap-4 w-full py-2">
           <div className="flex flex-col">
-            <label className="uppercase text-sm py-2">Name</label>
+            <label className="uppercase text-sm py-2 text-stone-500">Name</label>
             <input
-              className="border-2 rounded-lg p-3 flex border-gray-300"
+              className="rounded-lg p-3 bg-white border border-stone-300 text-stone-900 focus:outline-none focus:border-teal-600 transition-colors"
               type="text"
               name="name"
               value={formData?.name}
@@ -53,9 +53,11 @@ function Contact() {
             />
           </div>
           <div className="flex flex-col">
-            <label className="uppercase text-sm py-2">Phone Number</label>
+            <label className="uppercase text-sm py-2 text-stone-500">
+              Phone Number
+            </label>
             <input
-              className="border-2 rounded-lg p-3 flex border-gray-300"
+              className="rounded-lg p-3 bg-white border border-stone-300 text-stone-900 focus:outline-none focus:border-teal-600 transition-colors"
               type="number"
               name="phone"
               value={formData?.phone}
@@ -63,10 +65,10 @@ function Contact() {
             />
           </div>
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Email</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-sm py-2 text-stone-500">Email</label>
           <input
-            className="border-2 rounded-lg p-3 flex border-gray-300"
+            className="rounded-lg p-3 bg-white border border-stone-300 text-stone-900 focus:outline-none focus:border-teal-600 transition-colors"
             type="email"
             name="email"
             value={formData?.email}
@@ -74,10 +76,12 @@ function Contact() {
             required
           />
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Subject</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-sm py-2 text-stone-500">
+            Subject
+          </label>
           <input
-            className="border-2 rounded-lg p-3 flex border-gray-300"
+            className="rounded-lg p-3 bg-white border border-stone-300 text-stone-900 focus:outline-none focus:border-teal-600 transition-colors"
             type="text"
             name="subject"
             value={formData?.subject}
@@ -85,10 +89,12 @@ function Contact() {
             required
           />
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Message</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-sm py-2 text-stone-500">
+            Message
+          </label>
           <textarea
-            className="border-2 rounded-lg p-3 border-gray-300"
+            className="rounded-lg p-3 bg-white border border-stone-300 text-stone-900 focus:outline-none focus:border-teal-600 transition-colors"
             type="text"
             name="message"
             value={formData?.message}
@@ -100,7 +106,7 @@ function Contact() {
 
         <button
           type="submit"
-          className="bg-[#001b5e] text-gray-100 mt-4 w-full p-4 rounded-lg"
+          className="bg-stone-900 hover:bg-teal-600 text-white font-semibold mt-4 w-full p-4 rounded-lg transition-colors"
         >
           Send Message
         </button>

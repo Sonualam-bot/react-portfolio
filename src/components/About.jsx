@@ -2,38 +2,38 @@ import RenonImg from "../assets/Renon.jpeg";
 
 function About() {
   return (
-    <div id="about" className="max-full  mx-auto md:pl-8 p-4 py-16  ">
-      <h1 className="text-4xl font-bold text-center text-[#001b5e] mb-1">
+    <div
+      id="about"
+      className="max-w-[1040px] mx-auto md:pl-20 px-4 py-16 sm:py-20"
+    >
+      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-stone-900 mb-1">
         About
       </h1>
-      <div className="w-20 m-auto h-1 rounded-lg bg-[#facc15] mb-8"></div>
+      <div className="w-20 m-auto h-1 rounded-lg bg-teal-600 mb-8 sm:mb-10"></div>
 
-      <div className="max-w-3xl pb-16  mx-auto grid grid-cols-1 md:grid-cols-2">
-        <div className="rounded-xl md:w-[280px] mx-auto md:mx-0  md:mb-0 overflow-hidden shadow-lg ring-stone-100 ">
-          <img
-            src={RenonImg}
-            alt="/dev"
-            className="w-full h-full rounded-xl  "
-          />
+      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <div className="rounded-xl w-48 md:w-[280px] mx-auto md:mx-0 overflow-hidden ring-1 ring-stone-200 shadow-md">
+          <img src={RenonImg} alt="/dev" className="w-full h-full rounded-xl" />
         </div>
-        <div className="flex flex-col ">
-          <p className="text-lg md:text-lg text-left mb-4 ">
-            I am Md. Sonu Alam, a skillful front-end web developer with a strong
-            passion for creating dynamic and user-friendly websites. I thrive on
-            collaborating effectively to drive projects forward.
+        <div className="flex flex-col text-center md:text-left">
+          <p className="text-base sm:text-lg text-stone-600 mb-4">
+            I&apos;m Md Sonu Alam, a Software Engineer with close to two years
+            of experience building React.js and TypeScript applications in a
+            startup environment. At RekiSe Marine, I build GIS-based marine
+            monitoring and mission planning systems interactive maps, real-time
+            telemetry dashboards, and reusable component libraries used across
+            the product.
           </p>
-          <p className="text-lg md:text-lg text-left mb-2 ">
-            I find development to be a canvas where I turn innovative ideas into
-            engaging online experiences. Beyond coding, I bring a keen eye for
-            design, ensuring not just functionality but also a seamless and
-            visually appealing user interface. I am driven by the belief that
-            excellent software has the power to positively impact and improve
-            the lives of those around me.
+          <p className="text-base sm:text-lg text-stone-600 mb-6">
+            I care about reusable component architecture, clean API integration,
+            and frontend performance the kind of details that keep an
+            application reliable as it grows. I enjoy working closely with
+            product and backend teams to turn real operational problems into
+            interfaces people can trust.
           </p>
           <a
-            href="https://drive.google.com/file/d/1LeOyiWe1uQ-U8wf0PDPtbGJtEiZyFqok/view?usp=sharing"
-            className=" text-center w-[170px] mx-auto p-2 cursor-pointer hover:scale-110 duration-500 text-white px-2 font-bold rounded-full 
-          bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-blue-500"
+            href="https://drive.google.com/file/d/1iLsgFDPtjev--mjt_GlqZnMS9fS1T5rn/view?usp=sharing"
+            className="text-center w-[170px] mx-auto md:mx-0 px-2 py-3 cursor-pointer text-white font-semibold rounded-full bg-stone-900 hover:bg-teal-600 transition-colors duration-300"
             target="_blank"
             rel="noreferrer"
           >

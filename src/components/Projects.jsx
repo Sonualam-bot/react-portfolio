@@ -3,20 +3,19 @@ import { ProjectItem } from "./ProjectItem";
 
 function Projects() {
   return (
-    <div id="projects" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16 ">
-      <h1 className="text-4xl font-bold text-center text-[#001b5e]">
+    <div id="projects" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
+      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-stone-900">
         Projects
       </h1>
-      <div className="w-28 m-auto h-1 rounded-lg bg-[#facc15]"></div>
-      <p className=" py-8 text-left text-lg ">
-        During my mastery of React.js, I undertook diverse projects showcasing
-        proficiency in frontend development. Notable examples include an
-        e-commerce platform with dynamic product displays, a social media
-        platform leveraging React hooks, and a responsive personal portfolio
-        site. These projects reflect my commitment to creating interactive,
-        efficient, and visually compelling user interfaces.
+      <div className="w-28 m-auto h-1 rounded-lg bg-teal-600 mt-2"></div>
+      <p className="py-8 text-left text-base sm:text-lg text-stone-600">
+        A selection of full-stack projects built with React and the MERN
+        stack, spanning e-commerce, social platforms, and developer
+        tooling. Each one reflects the same habits I bring to production
+        work: reusable components, clean API integration, and interfaces
+        people can rely on.
       </p>
-      <div className="grid sm:grid-cols-2 gap-12">
+      <div className="grid sm:grid-cols-2 gap-8 sm:gap-12">
         {ProjectItem?.map((item) => {
           return <ProjectCard key={item.id} item={item} frontend />;
         })}

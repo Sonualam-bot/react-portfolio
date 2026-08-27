@@ -21,103 +21,102 @@ function Sidenav() {
     <div>
       <AiOutlineMenu
         onClick={handleNav}
-        className="absolute top-4 right-4 z-[99] md:hidden cursor-pointer  text-black"
+        size={24}
+        className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer text-stone-900"
       />
       {nav ? (
-        <div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20 text-black">
+        <div className="fixed inset-0 w-full h-screen bg-white/98 backdrop-blur-sm flex flex-col justify-center items-center z-20 text-stone-900 gap-3">
           <a
             onClick={handleNav}
             href="#main"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <AiOutlineHome size={20} />
-            <span className="pl-4">Home</span>
+            <span>Home</span>
           </a>
           <a
             onClick={handleNav}
             href="#about"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <BsPerson size={20} />
-            <span className="pl-4">About</span>
+            <span>About</span>
           </a>
           <a
             onClick={handleNav}
             href="#skills"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <IoSettingsOutline size={20} />
-            <span className="pl-4">Skills</span>
+            <span>Skills</span>
           </a>
           <a
             onClick={handleNav}
             href="#projects"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <AiOutlineProject size={20} />
-            <span className="pl-4">Projects</span>
+            <span>Projects</span>
           </a>
 
           <a
             onClick={handleNav}
             href="#journey"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <GiJourney size={20} />
-            <span className="pl-4">Journey</span>
+            <span>Journey</span>
           </a>
           <a
             onClick={handleNav}
             href="#contact"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
+            className="w-[75%] max-w-xs flex items-center gap-4 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4 cursor-pointer hover:border-teal-600/60 hover:text-teal-600 transition-colors"
           >
             <AiOutlineMail size={20} />
-            <span className="pl-4">Contact</span>
+            <span>Contact</span>
           </a>
         </div>
       ) : (
         ""
       )}
-      <div className="md:block hidden fixed top-[25%] z-10 text-black">
-        <div className="flex flex-col">
-          <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <AiOutlineHome />
-          </a>
-          <a
-            href="#about"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <BsPerson />
-          </a>
-          <a
-            href="#skills"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <IoSettingsOutline />
-          </a>
-          <a
-            href="#projects"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <AiOutlineProject />
-          </a>
-          <a
-            href="#journey"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <GiJourney />
-          </a>
+      <div className="md:flex hidden flex-col fixed top-1/2 -translate-y-1/2 left-4 z-10 gap-2 rounded-full border border-stone-200 bg-white/90 backdrop-blur-sm p-2 shadow-sm">
+        <a
+          href="#main"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <AiOutlineHome />
+        </a>
+        <a
+          href="#about"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <BsPerson />
+        </a>
+        <a
+          href="#skills"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <IoSettingsOutline />
+        </a>
+        <a
+          href="#projects"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <AiOutlineProject />
+        </a>
+        <a
+          href="#journey"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <GiJourney />
+        </a>
 
-          <a
-            href="#contact"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <AiOutlineMail />
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="rounded-full p-3 text-stone-400 cursor-pointer hover:text-teal-600 hover:bg-stone-100 transition-colors duration-200"
+        >
+          <AiOutlineMail />
+        </a>
       </div>
     </div>
   );
