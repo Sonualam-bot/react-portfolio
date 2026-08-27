@@ -1,4 +1,5 @@
 import RenonImg from "../assets/Renon.jpeg";
+import Reveal from "./Reveal";
 
 function About() {
   return (
@@ -6,12 +7,15 @@ function About() {
       id="about"
       className="max-w-[1040px] mx-auto md:pl-20 px-4 py-16 sm:py-20"
     >
-      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-white mb-1">
+      <Reveal as="h1" className="text-3xl sm:text-4xl font-display font-bold text-center text-white mb-1">
         About
-      </h1>
+      </Reveal>
       <div className="w-20 m-auto h-1 rounded-lg bg-lime-400 mb-8 sm:mb-10"></div>
 
-      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+      <Reveal
+        delay={100}
+        className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
+      >
         <div className="rounded-xl w-48 md:w-[280px] mx-auto md:mx-0 overflow-hidden ring-2 ring-lime-400/60 shadow-[0_0_24px_rgba(163,230,53,0.2)]">
           <img src={RenonImg} alt="/dev" className="w-full h-full rounded-xl" />
         </div>
@@ -40,7 +44,7 @@ function About() {
             Download Resume
           </a>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }

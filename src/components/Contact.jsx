@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Reveal from "./Reveal";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -30,11 +31,12 @@ function Contact() {
 
   return (
     <div id="contact" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
-      <h1 className="pt-4 text-3xl sm:text-4xl font-display font-bold text-center text-white">
+      <Reveal as="h1" className="pt-4 text-3xl sm:text-4xl font-display font-bold text-center text-white">
         Contact
-      </h1>
+      </Reveal>
       <div className="w-28 mb-8 m-auto h-1 rounded-lg bg-lime-400"></div>
-      <form
+      <Reveal
+        as="form"
         action="https://getform.io/f/c2cca6fe-6b25-423a-8360-3f2400dc1ff5"
         method="POST"
         encType="multipart/form-data"
@@ -110,7 +112,7 @@ function Contact() {
         >
           Send Message
         </button>
-      </form>
+      </Reveal>
     </div>
   );
 }

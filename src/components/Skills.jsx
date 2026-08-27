@@ -23,6 +23,7 @@ import {
   SiPrettier,
   SiJirasoftware,
 } from "react-icons/si";
+import Reveal from "./Reveal";
 
 const skillGroups = [
   {
@@ -86,14 +87,14 @@ function SkillTile({ skill }) {
 function Skills() {
   return (
     <div id="skills" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-white">
+      <Reveal as="h1" className="text-3xl sm:text-4xl font-display font-bold text-center text-white">
         Skills
-      </h1>
+      </Reveal>
       <div className="w-20 m-auto h-1 rounded-lg bg-lime-400 mt-2 mb-10"></div>
 
       <div className="flex flex-col gap-8">
-        {skillGroups.map((group) => (
-          <div key={group.label}>
+        {skillGroups.map((group, groupIndex) => (
+          <Reveal key={group.label} delay={groupIndex * 100}>
             <p className="text-xs font-display font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-3">
               {group.label}
             </p>
@@ -102,7 +103,7 @@ function Skills() {
                 <SkillTile key={skill.tag} skill={skill} />
               ))}
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>
