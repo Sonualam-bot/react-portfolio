@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Reveal from "./Reveal";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -29,12 +30,13 @@ function Contact() {
   };
 
   return (
-    <div id="contact" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16 ">
-      <h1 className="pt-4 text-4xl font-bold text-center text-[#001b5e]">
+    <div id="contact" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
+      <Reveal as="h1" className="pt-4 text-3xl sm:text-4xl font-display font-bold text-center text-white">
         Contact
-      </h1>
-      <div className="w-28 mb-4 m-auto h-1 rounded-lg bg-[#facc15]"></div>
-      <form
+      </Reveal>
+      <div className="w-28 mb-8 m-auto h-1 rounded-lg bg-lime-400"></div>
+      <Reveal
+        as="form"
         action="https://getform.io/f/c2cca6fe-6b25-423a-8360-3f2400dc1ff5"
         method="POST"
         encType="multipart/form-data"
@@ -42,9 +44,9 @@ function Contact() {
       >
         <div className="grid md:grid-cols-2 gap-4 w-full py-2">
           <div className="flex flex-col">
-            <label className="uppercase text-sm py-2">Name</label>
+            <label className="uppercase text-xs tracking-wider font-display font-semibold py-2 text-lime-400/80">Name</label>
             <input
-              className="border-2 rounded-lg p-3 flex border-gray-300"
+              className="rounded-lg p-3 bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-lime-400 transition-colors"
               type="text"
               name="name"
               value={formData?.name}
@@ -53,9 +55,11 @@ function Contact() {
             />
           </div>
           <div className="flex flex-col">
-            <label className="uppercase text-sm py-2">Phone Number</label>
+            <label className="uppercase text-xs tracking-wider font-display font-semibold py-2 text-lime-400/80">
+              Phone Number
+            </label>
             <input
-              className="border-2 rounded-lg p-3 flex border-gray-300"
+              className="rounded-lg p-3 bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-lime-400 transition-colors"
               type="number"
               name="phone"
               value={formData?.phone}
@@ -63,10 +67,10 @@ function Contact() {
             />
           </div>
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Email</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-xs tracking-wider font-display font-semibold py-2 text-lime-400/80">Email</label>
           <input
-            className="border-2 rounded-lg p-3 flex border-gray-300"
+            className="rounded-lg p-3 bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-lime-400 transition-colors"
             type="email"
             name="email"
             value={formData?.email}
@@ -74,10 +78,12 @@ function Contact() {
             required
           />
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Subject</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-xs tracking-wider font-display font-semibold py-2 text-lime-400/80">
+            Subject
+          </label>
           <input
-            className="border-2 rounded-lg p-3 flex border-gray-300"
+            className="rounded-lg p-3 bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-lime-400 transition-colors"
             type="text"
             name="subject"
             value={formData?.subject}
@@ -85,10 +91,12 @@ function Contact() {
             required
           />
         </div>
-        <div className="flex flex-col py-2 ">
-          <label className="uppercase text-sm py-2">Message</label>
+        <div className="flex flex-col py-2">
+          <label className="uppercase text-xs tracking-wider font-display font-semibold py-2 text-lime-400/80">
+            Message
+          </label>
           <textarea
-            className="border-2 rounded-lg p-3 border-gray-300"
+            className="rounded-lg p-3 bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-lime-400 transition-colors"
             type="text"
             name="message"
             value={formData?.message}
@@ -100,11 +108,11 @@ function Contact() {
 
         <button
           type="submit"
-          className="bg-[#001b5e] text-gray-100 mt-4 w-full p-4 rounded-lg"
+          className="bg-lime-400 hover:bg-lime-300 text-black font-display font-bold uppercase tracking-wide mt-4 w-full p-4 rounded-lg transition-colors shadow-[0_0_20px_rgba(163,230,53,0.3)]"
         >
           Send Message
         </button>
-      </form>
+      </Reveal>
     </div>
   );
 }

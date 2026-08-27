@@ -1,6 +1,7 @@
 //react- icons
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
+  AiOutlineClose,
   AiOutlineHome,
   AiOutlineMail,
   AiOutlineMenu,
@@ -10,114 +11,91 @@ import { BsPerson } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GiJourney } from "react-icons/gi";
 
+const navLinks = [
+  { href: "#main", label: "Home", Icon: AiOutlineHome },
+  { href: "#about", label: "About", Icon: BsPerson },
+  { href: "#skills", label: "Skills", Icon: IoSettingsOutline },
+  { href: "#projects", label: "Projects", Icon: AiOutlineProject },
+  { href: "#journey", label: "Journey", Icon: GiJourney },
+  { href: "#contact", label: "Contact", Icon: AiOutlineMail },
+];
+
 function Sidenav() {
   const [nav, setNav] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = nav ? "hidden" : "";
+
+    if (!nav) {
+      setMenuVisible(false);
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+
+    const frame = requestAnimationFrame(() => setMenuVisible(true));
+    return () => {
+      cancelAnimationFrame(frame);
+      document.body.style.overflow = "";
+    };
+  }, [nav]);
+
   return (
     <div>
-      <AiOutlineMenu
-        onClick={handleNav}
-        className="absolute top-4 right-4 z-[99] md:hidden cursor-pointer  text-black"
-      />
       {nav ? (
-        <div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20 text-black">
-          <a
-            onClick={handleNav}
-            href="#main"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <AiOutlineHome size={20} />
-            <span className="pl-4">Home</span>
-          </a>
-          <a
-            onClick={handleNav}
-            href="#about"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <BsPerson size={20} />
-            <span className="pl-4">About</span>
-          </a>
-          <a
-            onClick={handleNav}
-            href="#skills"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <IoSettingsOutline size={20} />
-            <span className="pl-4">Skills</span>
-          </a>
-          <a
-            onClick={handleNav}
-            href="#projects"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <AiOutlineProject size={20} />
-            <span className="pl-4">Projects</span>
-          </a>
-
-          <a
-            onClick={handleNav}
-            href="#journey"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <GiJourney size={20} />
-            <span className="pl-4">Journey</span>
-          </a>
-          <a
-            onClick={handleNav}
-            href="#contact"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in-out"
-          >
-            <AiOutlineMail size={20} />
-            <span className="pl-4">Contact</span>
-          </a>
+        <AiOutlineClose
+          onClick={handleNav}
+          size={24}
+          className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer text-lime-400"
+        />
+      ) : (
+        <AiOutlineMenu
+          onClick={handleNav}
+          size={24}
+          className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer text-lime-400"
+        />
+      )}
+      {nav ? (
+        <div
+          className={`fixed inset-0 w-full h-[100dvh] bg-black/70 backdrop-blur-md flex flex-col justify-center items-center z-20 text-white gap-3 overscroll-contain transition-opacity duration-300 ${
+            menuVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {navLinks.map(({ href, label, Icon }, index) => (
+            <a
+              key={href}
+              onClick={handleNav}
+              href={href}
+              className={`w-[75%] max-w-xs flex items-center gap-4 rounded-md border border-lime-500/30 bg-zinc-950/80 px-5 py-4 cursor-pointer hover:border-lime-400 hover:text-lime-400 transition-all duration-300 ${
+                menuVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-3"
+              }`}
+              style={{ transitionDelay: `${menuVisible ? index * 60 : 0}ms` }}
+            >
+              <Icon size={20} />
+              <span>{label}</span>
+            </a>
+          ))}
         </div>
       ) : (
         ""
       )}
-      <div className="md:block hidden fixed top-[25%] z-10 text-black">
-        <div className="flex flex-col">
+      <div className="md:flex hidden flex-col fixed top-1/2 -translate-y-1/2 left-4 z-10 gap-2 rounded-full border border-lime-500/30 bg-zinc-950/90 backdrop-blur-sm p-2 shadow-[0_0_20px_rgba(163,230,53,0.15)]">
+        {navLinks.map(({ href, Icon }) => (
           <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+            key={href}
+            href={href}
+            className="rounded-full p-3 text-zinc-500 cursor-pointer hover:text-lime-400 hover:bg-zinc-900 transition-colors duration-200"
           >
-            <AiOutlineHome />
+            <Icon />
           </a>
-          <a
-            href="#about"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <BsPerson />
-          </a>
-          <a
-            href="#skills"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <IoSettingsOutline />
-          </a>
-          <a
-            href="#projects"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <AiOutlineProject />
-          </a>
-          <a
-            href="#journey"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <GiJourney />
-          </a>
-
-          <a
-            href="#contact"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <AiOutlineMail />
-          </a>
-        </div>
+        ))}
       </div>
     </div>
   );

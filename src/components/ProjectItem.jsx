@@ -3,8 +3,19 @@ import SocialImg from "../assets/social.png";
 import CssLibImg from "../assets/csslib.png";
 import fitnessTracker from "../assets/fitnessTracker.png";
 import stackoverFlow from "../assets/stackoverflow.png";
+import mrpcImg from "../assets/mrpc.svg";
 
 export const ProjectItem = [
+  {
+    id: 11,
+    img: mrpcImg,
+    title: "Multi-Rate Pricing Calculator",
+    liveLink: "https://multi-rate-pricing-calculator-psi.vercel.app/",
+    github: "https://github.com/Sonualam-bot/multi-rate-pricing-calculator",
+    tag: "frontend",
+    techStack:
+      "A full-stack invoicing platform with JWT authentication, document lifecycle management, and server-side calculation of multi-rate discounts and tax, built with the MERN stack and TypeScript. Uses integer-cent money handling to eliminate floating-point drift, verified with unit tests.",
+  },
   {
     id: 9,
     img: fitnessTracker,
@@ -43,7 +54,7 @@ export const ProjectItem = [
     github: "https://github.com/Sonualam-bot/socioBuzz",
     tag: "frontend",
     techStack:
-      "A social media for travellers built using React, Mockbee backend, Context API.",
+      "A full-stack social media application built with the MERN stack, with authentication, user profiles, posting, and interactions across a responsive UI.",
   },
   {
     id: 3,

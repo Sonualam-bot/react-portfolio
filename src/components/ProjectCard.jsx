@@ -3,37 +3,29 @@ function ProjectCard({ item, frontend }) {
   return (
     <div
       key={id}
-      className="group relative max-w-2xl rounded-lg border border-gray-100 p-3 shadow-2xl shadow-gray-[#001b5e]/10 md:p-4"
+      className="group relative max-w-2xl rounded-lg border border-zinc-800 bg-zinc-950 p-3 transition-colors duration-300 hover:border-lime-400/60 hover:shadow-[0_0_18px_rgba(163,230,53,0.15)] md:p-4"
     >
-      <div className="relative w-full overflow-hidden rounded-lg shadow-lg ">
+      <div className="relative w-full overflow-hidden rounded-lg">
         <img
           src={img}
           alt="cover"
           loading="lazy"
           width="900"
           height="590"
-          className="h-52 w-full object-cover object-top overflow-hidden  transition duration-500 group-hover:scale-110 group-hover:shadow-md "
+          className="h-52 w-full object-cover object-top overflow-hidden transition duration-500 group-hover:scale-105"
         />
       </div>
 
-      <div className="hidden group-hover:block absolute top-[35%] left-[50%] translate-x-[-50%] translate-y-[-50%]  ">
-        {/* <h3 className="text-2xl font-bold text-white tracking-wider text-center">
+      <div className="relative mt-4">
+        <h3 className="text-xl sm:text-2xl font-display font-semibold uppercase text-white">
           {title}
-        </h3> */}
-        {/* <div className="flex flex-row items-center gap-3 justify-center ">
-          {techStack?.map((stack, index) => {
-            return (
-              <p key={index} className="pb-4 pt-2 text-white text-center">
-                {stack}
-              </p>
-            );
-          })}
-        </div> */}
+        </h3>
+        <p className="mt-2 text-sm sm:text-base text-zinc-400">{techStack}</p>
 
-        <div className="flex items-center justify-center gap-6 ">
+        <div className="flex items-center gap-3 mt-4">
           <a
             href={liveLink}
-            className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg bg-gradient-to-r from-indigo-400 to-indigo-800 hover:from-purple-500 hover:to-violet-700 hover:text-white "
+            className="text-center px-4 py-2 rounded-md bg-lime-400 text-black font-display font-bold uppercase tracking-wide cursor-pointer text-xs hover:bg-lime-300 transition-colors"
             target="_blank"
             rel="noreferrer"
           >
@@ -42,7 +34,7 @@ function ProjectCard({ item, frontend }) {
           {frontend && (
             <a
               href={github}
-              className="text-center p-2 rounded-lg bg-white text-gray-700 font-bold cursor-pointer text-lg bg-gradient-to-r from-indigo-400 to-indigo-800 hover:from-purple-500 hover:to-violet-700 hover:text-white"
+              className="text-center px-4 py-2 rounded-md border border-zinc-700 text-zinc-300 font-display font-bold uppercase tracking-wide cursor-pointer text-xs hover:border-lime-400 hover:text-lime-400 transition-colors"
               target="_blank"
               rel="noreferrer"
             >
@@ -50,14 +42,6 @@ function ProjectCard({ item, frontend }) {
             </a>
           )}
         </div>
-      </div>
-
-      <div className="relative mt-3">
-        <h3 className="text-2xl font-semibold uppercase text-[#001b5e] ">
-          {" "}
-          {title}{" "}
-        </h3>
-        <p className="mt-3 ">{techStack}</p>
       </div>
     </div>
   );
