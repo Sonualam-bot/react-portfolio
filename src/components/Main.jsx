@@ -7,12 +7,43 @@ const splitter = new GraphemeSplitter();
 
 function Main() {
   return (
-    <div id="main" className="relative h-screen w-full bg-white">
-      <div className="h-full w-full flex flex-col justify-center items-center px-6 text-center">
-        <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-teal-600 mb-4">
+    <div
+      id="main"
+      className="relative h-screen w-full bg-black overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#a3e635 1px, transparent 1px), linear-gradient(90deg, #a3e635 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
+
+      <div className="h-full w-full flex flex-col justify-center items-center px-6 text-center relative">
+        <svg
+          width="72"
+          height="72"
+          viewBox="0 0 72 72"
+          className="mb-6 drop-shadow-[0_0_16px_rgba(163,230,53,0.55)]"
+        >
+          <circle
+            cx="36"
+            cy="36"
+            r="32"
+            fill="none"
+            stroke="#a3e635"
+            strokeWidth="3"
+            strokeDasharray="6 10"
+          />
+          <circle cx="36" cy="36" r="22" fill="#0a0a0a" stroke="#a3e635" strokeWidth="2" />
+          <circle cx="36" cy="36" r="8" fill="#a3e635" />
+        </svg>
+
+        <p className="text-xs sm:text-sm font-display font-bold tracking-[0.3em] uppercase text-lime-400 mb-4">
           Frontend Engineer
         </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-stone-900 mb-3">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-3">
           <TypeAnimation
             splitter={(str) => splitter.splitGraphemes(str)}
             sequence={[
@@ -38,10 +69,10 @@ function Main() {
             repeat={Infinity}
           />
         </h2>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-stone-900">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white">
           I&apos;m Md Sonu Alam
         </h1>
-        <h2 className="flex text-lg sm:text-xl md:text-2xl pt-4 text-stone-500 font-medium">
+        <h2 className="flex text-lg sm:text-xl md:text-2xl pt-4 text-zinc-400 font-medium">
           I build with
           <TypeAnimation
             sequence={[
@@ -55,13 +86,13 @@ function Main() {
             wrapper="span"
             cursor={true}
             speed={50}
-            style={{ fontSize: "1em", paddingLeft: "5px", color: "#0d9488" }}
+            style={{ fontSize: "1em", paddingLeft: "5px", color: "#a3e635" }}
             repeat={Infinity}
           />
         </h2>
         <a
           href="#projects"
-          className="mt-8 px-6 py-3 rounded-full bg-stone-900 text-white text-sm font-semibold hover:bg-teal-600 transition-colors"
+          className="mt-8 px-7 py-3 rounded-md bg-lime-400 text-black text-sm font-display font-bold uppercase tracking-wider hover:bg-lime-300 transition-colors shadow-[0_0_20px_rgba(163,230,53,0.35)]"
         >
           View My Work
         </a>
@@ -70,7 +101,7 @@ function Main() {
             to="https://x.com/md_sonu_alam"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-stone-400 hover:text-teal-600 transition-colors"
+            className="text-zinc-500 hover:text-lime-400 transition-colors"
           >
             <FaTwitter className="cursor-pointer" size={20} />
           </NavLink>
@@ -79,7 +110,7 @@ function Main() {
             to="https://github.com/Sonualam-bot"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-stone-400 hover:text-teal-600 transition-colors"
+            className="text-zinc-500 hover:text-lime-400 transition-colors"
           >
             <FaGithub className="cursor-pointer" size={20} />
           </NavLink>
@@ -88,7 +119,7 @@ function Main() {
             to="https://www.linkedin.com/in/mdsonualam"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-stone-400 hover:text-teal-600 transition-colors"
+            className="text-zinc-500 hover:text-lime-400 transition-colors"
           >
             <FaLinkedin className="cursor-pointer" size={20} />
           </NavLink>

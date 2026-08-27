@@ -3,7 +3,7 @@ function ProjectCard({ item, frontend }) {
   return (
     <div
       key={id}
-      className="group relative max-w-2xl rounded-lg border border-stone-200 bg-white p-3 shadow-sm transition-colors duration-300 hover:border-teal-600/50 hover:shadow-md md:p-4"
+      className="group relative max-w-2xl rounded-lg border border-zinc-800 bg-zinc-950 p-3 transition-colors duration-300 hover:border-lime-400/60 hover:shadow-[0_0_18px_rgba(163,230,53,0.15)] md:p-4"
     >
       <div className="relative w-full overflow-hidden rounded-lg">
         <img
@@ -17,15 +17,15 @@ function ProjectCard({ item, frontend }) {
       </div>
 
       <div className="relative mt-4">
-        <h3 className="text-xl sm:text-2xl font-display font-semibold uppercase text-stone-900">
+        <h3 className="text-xl sm:text-2xl font-display font-semibold uppercase text-white">
           {title}
         </h3>
-        <p className="mt-2 text-sm sm:text-base text-stone-600">{techStack}</p>
+        <p className="mt-2 text-sm sm:text-base text-zinc-400">{techStack}</p>
 
         <div className="flex items-center gap-3 mt-4">
           <a
             href={liveLink}
-            className="text-center px-4 py-2 rounded-lg bg-stone-900 text-white font-semibold cursor-pointer text-sm hover:bg-teal-600 transition-colors"
+            className="text-center px-4 py-2 rounded-md bg-lime-400 text-black font-display font-bold uppercase tracking-wide cursor-pointer text-xs hover:bg-lime-300 transition-colors"
             target="_blank"
             rel="noreferrer"
           >
@@ -34,7 +34,7 @@ function ProjectCard({ item, frontend }) {
           {frontend && (
             <a
               href={github}
-              className="text-center px-4 py-2 rounded-lg border border-stone-300 text-stone-700 font-semibold cursor-pointer text-sm hover:border-amber-500 hover:text-amber-600 transition-colors"
+              className="text-center px-4 py-2 rounded-md border border-zinc-700 text-zinc-300 font-display font-bold uppercase tracking-wide cursor-pointer text-xs hover:border-lime-400 hover:text-lime-400 transition-colors"
               target="_blank"
               rel="noreferrer"
             >

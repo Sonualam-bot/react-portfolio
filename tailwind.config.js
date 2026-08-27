@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Space Grotesk'", "system-ui", "sans-serif"],
+        display: ["'Orbitron'", "system-ui", "sans-serif"],
       },
     },
   },

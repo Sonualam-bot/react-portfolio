@@ -36,7 +36,7 @@ const skillGroups = [
     label: "Frontend",
     items: [
       { icon: React, tag: "React" },
-      { Icon: SiNextdotjs, tag: "Next.js", color: "#000000" },
+      { Icon: SiNextdotjs, tag: "Next.js", color: "#ffffff" },
       { Icon: SiRedux, tag: "Redux Toolkit", color: "#764abc" },
       { Icon: SiReactquery, tag: "TanStack Query", color: "#ff4154" },
       { icon: Tailwind, tag: "Tailwind CSS" },
@@ -51,7 +51,7 @@ const skillGroups = [
     label: "Backend & APIs",
     items: [
       { icon: Node, tag: "Node.js" },
-      { Icon: SiExpress, tag: "Express.js", color: "#000000" },
+      { Icon: SiExpress, tag: "Express.js", color: "#ffffff" },
       { icon: Mongo, tag: "MongoDB" },
       { Icon: SiAxios, tag: "Axios", color: "#5a29e4" },
     ],
@@ -60,7 +60,7 @@ const skillGroups = [
     label: "Tools",
     items: [
       { Icon: SiGit, tag: "Git", color: "#f05032" },
-      { Icon: SiGithub, tag: "GitHub", color: "#181717" },
+      { Icon: SiGithub, tag: "GitHub", color: "#ffffff" },
       { Icon: SiDocker, tag: "Docker", color: "#2496ed" },
       { Icon: SiJest, tag: "Jest", color: "#c21325" },
       { Icon: SiEslint, tag: "ESLint", color: "#4b32c3" },
@@ -72,13 +72,13 @@ const skillGroups = [
 
 function SkillTile({ skill }) {
   return (
-    <div className="rounded-lg border border-stone-200 bg-white p-4 transition-colors duration-300 hover:border-teal-600/50 hover:shadow-sm">
+    <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-4 transition-colors duration-300 hover:border-lime-400/60 hover:shadow-[0_0_14px_rgba(163,230,53,0.15)]">
       {skill.Icon ? (
         <skill.Icon className="mx-auto" size={36} color={skill.color} />
       ) : (
         <img className="w-9 mx-auto" src={skill.icon} alt={skill.tag} />
       )}
-      <p className="mt-3 text-stone-600 text-xs sm:text-sm">{skill.tag}</p>
+      <p className="mt-3 text-zinc-400 text-xs sm:text-sm">{skill.tag}</p>
     </div>
   );
 }
@@ -86,15 +86,15 @@ function SkillTile({ skill }) {
 function Skills() {
   return (
     <div id="skills" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-stone-900">
+      <h1 className="text-3xl sm:text-4xl font-display font-bold text-center text-white">
         Skills
       </h1>
-      <div className="w-20 m-auto h-1 rounded-lg bg-teal-600 mt-2 mb-10"></div>
+      <div className="w-20 m-auto h-1 rounded-lg bg-lime-400 mt-2 mb-10"></div>
 
       <div className="flex flex-col gap-8">
         {skillGroups.map((group) => (
           <div key={group.label}>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-stone-400 mb-3">
+            <p className="text-xs font-display font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-3">
               {group.label}
             </p>
             <div className="w-full grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4 text-center">

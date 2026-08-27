@@ -10,7 +10,7 @@ import Work from "./components/Work";
 function App() {
   return (
     <>
-      <div className="bg-white text-stone-900 min-h-screen overflow-x-hidden">
+      <div className="bg-black text-white min-h-screen overflow-x-hidden">
         <Sidenav />
         <Main />
         <About />
