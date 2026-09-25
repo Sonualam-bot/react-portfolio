@@ -1,51 +1,56 @@
-import RenonImg from "../assets/Renon.jpeg";
+import PortraitImg from "../assets/Renon.jpeg";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
+
+const facts = [
+  { term: "Currently", detail: "Software Engineer, RekiSe Marine" },
+  { term: "Based in", detail: "Bengaluru, India" },
+  { term: "Focus", detail: "React, TypeScript, OpenLayers" },
+];
 
 function About() {
   return (
-    <div
-      id="about"
-      className="max-w-[1040px] mx-auto md:pl-20 px-4 py-16 sm:py-20"
-    >
-      <Reveal as="h1" className="text-3xl sm:text-4xl font-display font-bold text-center text-white mb-1">
-        About
-      </Reveal>
-      <div className="w-20 m-auto h-1 rounded-lg bg-lime-400 mb-8 sm:mb-10"></div>
+    <section id="about" className="container-page py-24 sm:py-32">
+      <SectionHeader eyebrow="About" title="Interfaces people can trust." />
 
-      <Reveal
-        delay={100}
-        className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
-      >
-        <div className="rounded-xl w-48 md:w-[280px] mx-auto md:mx-0 overflow-hidden ring-2 ring-lime-400/60 shadow-[0_0_24px_rgba(163,230,53,0.2)]">
-          <img src={RenonImg} alt="/dev" className="w-full h-full rounded-xl" />
-        </div>
-        <div className="flex flex-col text-center md:text-left">
-          <p className="text-base sm:text-lg text-zinc-400 mb-4">
-            I&apos;m Md Sonu Alam, a Software Engineer with close to two years
-            of experience building React.js and TypeScript applications in a
-            startup environment. At RekiSe Marine, I build GIS-based marine
-            monitoring and mission planning systems interactive maps, real-time
-            telemetry dashboards, and reusable component libraries used across
-            the product.
+      <div className="grid items-start gap-10 md:grid-cols-[17.5rem_1fr] md:gap-16">
+        <Reveal className="mx-auto w-full max-w-[17.5rem] overflow-hidden rounded-[1.75rem] bg-surface shadow-card">
+          <img
+            src={PortraitImg}
+            alt="Portrait of Md Sonu Alam"
+            width="535"
+            height="798"
+            className="aspect-[4/5] w-full object-cover"
+          />
+        </Reveal>
+
+        <Reveal delay={80}>
+          <p className="text-label">
+            I&apos;m a software engineer with close to two years of experience
+            building React and TypeScript applications in a startup. At RekiSe
+            Marine I work on GIS-based marine monitoring and mission planning:
+            interactive maps, real-time telemetry dashboards, and the reusable
+            component library the rest of the product is built on.
           </p>
-          <p className="text-base sm:text-lg text-zinc-400 mb-6">
-            I care about reusable component architecture, clean API integration,
-            and frontend performance the kind of details that keep an
-            application reliable as it grows. I enjoy working closely with
-            product and backend teams to turn real operational problems into
-            interfaces people can trust.
+          <p className="mt-5 text-secondary">
+            I care about component architecture, clean API integration, and
+            frontend performance, the details that keep an application
+            reliable as it grows. I like working closely with product and
+            backend teams to turn real operational problems into calm, clear
+            interfaces.
           </p>
-          <a
-            href="https://drive.google.com/file/d/1iLsgFDPtjev--mjt_GlqZnMS9fS1T5rn/view?usp=sharing"
-            className="text-center w-[190px] mx-auto md:mx-0 px-2 py-3 cursor-pointer text-black font-display font-bold uppercase tracking-wide text-sm rounded-md bg-lime-400 hover:bg-lime-300 transition-colors duration-300 shadow-[0_0_16px_rgba(163,230,53,0.3)]"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Download Resume
-          </a>
-        </div>
-      </Reveal>
-    </div>
+
+          <dl className="mt-10 grid gap-6 border-t border-separator pt-6 sm:grid-cols-3">
+            {facts.map(({ term, detail }) => (
+              <div key={term}>
+                <dt className="caption text-secondary">{term}</dt>
+                <dd className="mt-1 font-medium">{detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
