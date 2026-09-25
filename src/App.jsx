@@ -1,24 +1,28 @@
-import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Main from "./components/Main";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import NavBar from "./components/NavBar";
 import Projects from "./components/Projects";
-import Sidenav from "./components/Sidenav";
 import Skills from "./components/Skills";
-import Work from "./components/Work";
 
 function App() {
   return (
     <>
-      <div className="bg-black text-white min-h-screen overflow-x-hidden">
-        <Sidenav />
-        <Main />
+      <a href="#content" className="skip-link">
+        Skip to content
+      </a>
+      <NavBar />
+      <main id="content">
+        <Hero />
         <About />
-        <Skills />
         <Projects />
-        <Work />
+        <Experience />
+        <Skills />
         <Contact />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+// Scroll-in reveal. Not gesture-driven, so a CSS transition is fine here.
 function Reveal({
   children,
   className = "",
@@ -21,7 +22,7 @@ function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
@@ -31,8 +32,8 @@ function Reveal({
   return (
     <Tag
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      className={`transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none motion-reduce:duration-300 ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
       {...rest}

@@ -1,112 +1,105 @@
-import HTML from "../assets/html.png";
-import CSS from "../assets/css.png";
-import Javascript from "../assets/javascript.png";
-import React from "../assets/react.png";
-import Mongo from "../assets/mongo.png";
-import Node from "../assets/node.png";
-import Tailwind from "../assets/tailwind.png";
 import {
-  SiTypescript,
-  SiNextdotjs,
-  SiRedux,
-  SiReactquery,
-  SiSass,
-  SiOpenlayers,
-  SiVite,
-  SiExpress,
   SiAxios,
+  SiCss3,
+  SiDocker,
+  SiEslint,
+  SiExpress,
   SiGit,
   SiGithub,
-  SiDocker,
+  SiHtml5,
+  SiJavascript,
   SiJest,
-  SiEslint,
-  SiPrettier,
   SiJirasoftware,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenlayers,
+  SiPrettier,
+  SiReact,
+  SiReactquery,
+  SiRedux,
+  SiSass,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 const skillGroups = [
   {
     label: "Languages",
     items: [
-      { icon: Javascript, tag: "JavaScript" },
-      { Icon: SiTypescript, tag: "TypeScript", color: "#3178c6" },
+      { Icon: SiJavascript, name: "JavaScript" },
+      { Icon: SiTypescript, name: "TypeScript" },
     ],
   },
   {
     label: "Frontend",
     items: [
-      { icon: React, tag: "React" },
-      { Icon: SiNextdotjs, tag: "Next.js", color: "#ffffff" },
-      { Icon: SiRedux, tag: "Redux Toolkit", color: "#764abc" },
-      { Icon: SiReactquery, tag: "TanStack Query", color: "#ff4154" },
-      { icon: Tailwind, tag: "Tailwind CSS" },
-      { Icon: SiSass, tag: "SCSS", color: "#cc6699" },
-      { Icon: SiOpenlayers, tag: "OpenLayers", color: "#1f6b75" },
-      { Icon: SiVite, tag: "Vite", color: "#646cff" },
-      { icon: HTML, tag: "HTML5" },
-      { icon: CSS, tag: "CSS3" },
+      { Icon: SiReact, name: "React" },
+      { Icon: SiNextdotjs, name: "Next.js" },
+      { Icon: SiRedux, name: "Redux Toolkit" },
+      { Icon: SiReactquery, name: "TanStack Query" },
+      { Icon: SiTailwindcss, name: "Tailwind CSS" },
+      { Icon: SiSass, name: "SCSS" },
+      { Icon: SiOpenlayers, name: "OpenLayers" },
+      { Icon: SiVite, name: "Vite" },
+      { Icon: SiHtml5, name: "HTML" },
+      { Icon: SiCss3, name: "CSS" },
     ],
   },
   {
     label: "Backend & APIs",
     items: [
-      { icon: Node, tag: "Node.js" },
-      { Icon: SiExpress, tag: "Express.js", color: "#ffffff" },
-      { icon: Mongo, tag: "MongoDB" },
-      { Icon: SiAxios, tag: "Axios", color: "#5a29e4" },
+      { Icon: SiNodedotjs, name: "Node.js" },
+      { Icon: SiExpress, name: "Express" },
+      { Icon: SiMongodb, name: "MongoDB" },
+      { Icon: SiAxios, name: "Axios" },
     ],
   },
   {
     label: "Tools",
     items: [
-      { Icon: SiGit, tag: "Git", color: "#f05032" },
-      { Icon: SiGithub, tag: "GitHub", color: "#ffffff" },
-      { Icon: SiDocker, tag: "Docker", color: "#2496ed" },
-      { Icon: SiJest, tag: "Jest", color: "#c21325" },
-      { Icon: SiEslint, tag: "ESLint", color: "#4b32c3" },
-      { Icon: SiPrettier, tag: "Prettier", color: "#f7b93e" },
-      { Icon: SiJirasoftware, tag: "Jira", color: "#0052cc" },
+      { Icon: SiGit, name: "Git" },
+      { Icon: SiGithub, name: "GitHub" },
+      { Icon: SiDocker, name: "Docker" },
+      { Icon: SiJest, name: "Jest" },
+      { Icon: SiEslint, name: "ESLint" },
+      { Icon: SiPrettier, name: "Prettier" },
+      { Icon: SiJirasoftware, name: "Jira" },
     ],
   },
 ];
 
-function SkillTile({ skill }) {
-  return (
-    <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-4 transition-colors duration-300 hover:border-lime-400/60 hover:shadow-[0_0_14px_rgba(163,230,53,0.15)]">
-      {skill.Icon ? (
-        <skill.Icon className="mx-auto" size={36} color={skill.color} />
-      ) : (
-        <img className="w-9 mx-auto" src={skill.icon} alt={skill.tag} />
-      )}
-      <p className="mt-3 text-zinc-400 text-xs sm:text-sm">{skill.tag}</p>
-    </div>
-  );
-}
-
 function Skills() {
   return (
-    <div id="skills" className="max-w-[1040px] m-auto md:pl-20 px-4 py-16 sm:py-20">
-      <Reveal as="h1" className="text-3xl sm:text-4xl font-display font-bold text-center text-white">
-        Skills
-      </Reveal>
-      <div className="w-20 m-auto h-1 rounded-lg bg-lime-400 mt-2 mb-10"></div>
+    <section id="skills" className="container-page py-24 sm:py-32">
+      <SectionHeader eyebrow="Skills" title="What I work with." />
 
-      <div className="flex flex-col gap-8">
-        {skillGroups.map((group, groupIndex) => (
-          <Reveal key={group.label} delay={groupIndex * 100}>
-            <p className="text-xs font-display font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-3">
-              {group.label}
-            </p>
-            <div className="w-full grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4 text-center">
-              {group.items.map((skill) => (
-                <SkillTile key={skill.tag} skill={skill} />
+      <div className="border-t border-separator">
+        {skillGroups.map((group, index) => (
+          <Reveal
+            key={group.label}
+            delay={index * 60}
+            className="grid gap-4 border-b border-separator py-8 sm:grid-cols-[11rem_1fr] sm:gap-8"
+          >
+            <h3 className="caption font-medium">{group.label}</h3>
+            <ul className="flex flex-wrap gap-2">
+              {group.items.map(({ Icon, name }) => (
+                <li
+                  key={name}
+                  className="caption flex items-center gap-2 rounded-full bg-label/[0.05] px-3.5 py-2"
+                >
+                  <Icon size={15} className="text-secondary" aria-hidden />
+                  {name}
+                </li>
               ))}
-            </div>
+            </ul>
           </Reveal>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
