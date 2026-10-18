@@ -3,96 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Sonar: the portfolio of Md Sonu Alam, software engineer, as a playable nautical survey. Chart the archipelago, dock at each island, collect every skill." />
-    <meta name="theme-color" content="#0a2a3d" />
-    <title>Sonar · Md Sonu Alam</title>
-
-    <!-- Self-hosted Latin subsets (SIL OFL), preloaded so the intro paints in its real type. -->
-    <link rel="preload" href="/fonts/fraunces-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <style>
-      @font-face {
-        font-family: "Fraunces";
-        font-style: italic;
-        font-weight: 600;
-        font-display: swap;
-        src: url("/fonts/fraunces-latin-600-italic.woff2") format("woff2");
-      }
-      @font-face {
-        font-family: "Fraunces";
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: url("/fonts/fraunces-latin-600-normal.woff2") format("woff2");
-      }
-      @font-face {
-        font-family: "Instrument Sans";
-        font-style: normal;
-        font-weight: 400 700;
-        font-display: swap;
-        src: url("/fonts/instrument-sans-latin-wght-normal.woff2") format("woff2");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: url("/fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
-      }
-    </style>
+    <meta name="description" content="Md Sonu Alam, software engineer building map-driven, real-time interfaces with React and TypeScript." />
+    <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Md Sonu Alam · Software Engineer</title>
   </head>
   <body>
-    <!--
-      The title card is plain HTML so it paints before any JavaScript loads;
-      src/ui/Intro.jsx wires up its buttons once the app starts.
-    -->
-    <div id="intro" class="intro">
-      <div class="intro-card">
-        <p class="eyebrow">A playable portfolio</p>
-        <h1 class="intro-title">Sonar<span>.</span></h1>
-        <p class="intro-name">Md Sonu Alam · Software Engineer</p>
-        <p class="intro-lede">
-          By day I build mission-planning and vessel-telemetry software for marine
-          GIS at RekiSe Marine. So my portfolio is a survey vessel. Take the helm,
-          chart the archipelago, and collect every skill buoy on the way.
-        </p>
-
-        <!-- The last three need a keyboard, so small screens hide them. -->
-        <ul class="intro-controls">
-          <li><span class="intro-key">Click / tap the sea</span><span>Add waypoints. Drag one to move it, double-click to delete.</span></li>
-          <li><span class="intro-key">Click an island</span><span>Autopilot sails you to its jetty.</span></li>
-          <li><span class="intro-key">Ping</span><span>Sonar charts everything the ring touches.</span></li>
-          <li class="is-keyboard"><span class="intro-key">W A S D / arrows</span><span>Take the wheel yourself.</span></li>
-          <li class="is-keyboard"><span class="intro-key">Space</span><span>Sonar ping.</span></li>
-          <li class="is-keyboard"><span class="intro-key">E</span><span>Dock when you're alongside.</span></li>
-        </ul>
-
-        <div class="intro-actions">
-          <button type="button" class="btn btn-primary" data-intro="start" autofocus>Take the helm</button>
-          <button type="button" class="btn btn-ghost" data-intro="logbook">Just read the logbook</button>
-        </div>
-      </div>
-    </div>
-    <script>
-      // Returning sailors see "Resume" from the very first paint.
-      try {
-        var save = JSON.parse(localStorage.getItem("sonar-voyage-v1") || "null");
-        if (save && save.charted && save.charted.length > 1)
-          document.querySelector('[data-intro="start"]').textContent =
-            "Resume voyage · " + save.charted.length + " charted";
-      } catch (e) {}
-    </script>
-
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
