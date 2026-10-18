@@ -965,9 +965,9 @@ kbd {
   display: grid;
   place-items: center;
   padding: calc(var(--gutter) + var(--safe-top)) var(--gutter) calc(var(--gutter) + var(--safe-bottom));
-  background: rgba(4, 18, 28, 0.55);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  /* A plain tint, no backdrop-filter: blurring the live WebGL sea through a
+     full-screen layer that's fading in makes Chrome flash it white. */
+  background: rgba(4, 18, 28, 0.66);
   animation: fade 0.25s ease both;
 }
 
