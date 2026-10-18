@@ -1,59 +1,34 @@
-import { useState } from "react";
-import Desktop from "./os/Desktop";
-import { BootScreen, OffScreen, SleepScreen } from "./os/screens";
-
-const BOOT_KEY = "sonu-os-booted";
-
-const hasBooted = () => {
-  try {
-    return sessionStorage.getItem(BOOT_KEY) === "1";
-  } catch {
-    return false;
-  }
-};
-
-const rememberBoot = () => {
-  try {
-    sessionStorage.setItem(BOOT_KEY, "1");
-  } catch {
-    // Storage unavailable: the boot screen just shows again next time.
-  }
-};
+import { useCallback, useEffect, useRef, useState } from "react";
+import { startGame } from "./game/game";
+import { commands } from "./game/bridge";
+import Hud from "./ui/Hud";
+import Intro from "./ui/Intro";
+import Panel from "./ui/Panel";
+import Logbook from "./ui/Logbook";
+import { useGame } from "./ui/useGame";
 
 function App() {
-  // boot | desktop | sleep | off
-  const [phase, setPhase] = useState(() => (hasBooted() ? "desktop" : "boot"));
-  // Bumping the session remounts the desktop fresh, like a real restart.
-  const [session, setSession] = useState(0);
+  const seaRef = useRef(null);
+  const { started, panel } = useGame();
+  const [logbook, setLogbook] = useState(false);
 
-  const restart = () => {
-    setSession((s) => s + 1);
-    setPhase("boot");
-  };
+  useEffect(() => startGame(seaRef.current), []);
 
-  if (phase === "boot") {
-    return (
-      <BootScreen
-        onDone={() => {
-          rememberBoot();
-          setPhase("desktop");
-        }}
-      />
-    );
-  }
+  // The sea holds still while the logbook is open.
+  useEffect(() => {
+    if (panel) return;
+    commands.pause(logbook);
+  }, [logbook, panel]);
 
-  if (phase === "off") return <OffScreen onPowerOn={restart} />;
+  const closeLogbook = useCallback(() => setLogbook(false), []);
 
   return (
     <>
-      <Desktop
-        key={session}
-        onLogOff={restart}
-        onRestart={restart}
-        onShutDown={() => setPhase("off")}
-        onStandBy={() => setPhase("sleep")}
-      />
-      {phase === "sleep" && <SleepScreen onWake={() => setPhase("desktop")} />}
+      <div className="sea" ref={seaRef} />
+      {started && <Hud onLogbook={() => setLogbook(true)} />}
+      {!started && !logbook && <Intro onLogbook={() => setLogbook(true)} />}
+      {panel && <Panel panel={panel} />}
+      {logbook && <Logbook onClose={closeLogbook} />}
     </>
   );
 }
