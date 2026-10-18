@@ -14,7 +14,7 @@ import {
 } from "./world";
 import { planPath, nearestWater } from "./navigation";
 import { play, setMutedAudio } from "./audio";
-import { commands, emit, getState, persist, setState, toast } from "./bridge";
+import { commands, emit, flushQueuedCommands, getState, persist, setState, toast } from "./bridge";
 
 const hex = (h, a = 1) => new Color().setHex(h).withAlpha(a);
 const CLEAR = rgb(0, 0, 0, 0);
@@ -955,5 +955,6 @@ export function startGame(root) {
     };
 
   setCameraPos(boat.pos.add(vec2(0, 6)));
+  flushQueuedCommands();
   engineInit(() => {}, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, [], root);
 }

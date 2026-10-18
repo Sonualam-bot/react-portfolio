@@ -78,15 +78,21 @@ export const toast = (title, body, tone = "info") => {
   setTimeout(() => setState((s) => ({ toasts: s.toasts.filter((t) => t.id !== id) })), 4200);
 };
 
-// Filled in by the game once the engine is running.
-export const commands = {
-  ping: () => {},
-  setCourse: () => {},
-  dock: () => {},
-  clearRoute: () => {},
-  closePanel: () => {},
-  pause: () => {},
-  setMuted: () => {},
-  start: () => {},
-  zoom: () => {},
-};
+// Filled in by the game once the engine is running. Until then (the engine
+// boots after first paint) calls are queued and replayed on boot.
+const queued = [];
+const COMMANDS = ["ping", "setCourse", "dock", "clearRoute", "closePanel", "pause", "setMuted", "start", "zoom"];
+let bootRequest = () => {};
+export const onBootRequest = (handler) => (bootRequest = handler);
+export const commands = Object.fromEntries(
+  COMMANDS.map((name) => [
+    name,
+    (...args) => {
+      queued.push([name, args]);
+      // A real request (not the logbook's background pause) needs the engine,
+      // even when it arrives without any pointer or key event first.
+      if (name !== "pause") bootRequest();
+    },
+  ])
+);
+export const flushQueuedCommands = () => queued.splice(0).forEach(([name, args]) => commands[name](...args));
