@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => startGame(seaRef.current), []);
 
-  // The sea holds still while the logbook is open.
+  // The sea holds still while the logbook is open..
   useEffect(() => {
     if (panel) return;
     commands.pause(logbook);
